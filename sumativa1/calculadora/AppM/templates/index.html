@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Calculadora uwu</title>
+</head>
+<body>
+    <form method="post" action="/">
+        {% csrf_token %}
+        <h1>Calculadora</h1>
+        <br>
+        <label for="operador1">Primer Operador</label>
+        <input type="text" name="operador1">
+        <br>
+        <label for="operaciones">Operaciones</label>
+        <input type="radio" name="operacion" value="adicion" id="adicion">
+        <label for="suma">+</label>
+        <input type="radio" name="operacion" value="sustraccion" id="sustraccion">
+        <label for="resta">-</label>
+        <input type="radio" name="operacion" value="multiplicacion" id="multiplicacion">
+        <label for="multiplicacion">*</label>
+        <input type="radio" name="operacion" value="division" id="division">
+        <label for="division">/</label>
+        <br>
+        <label for="operador2">Segundo Operador</label>
+        <input type="text" name="operador2">
+        <br>
+        <input type="submit" value="Calcular">
+    </form>
+    <br>
+    <h1>Su resultado es: {{resultado}}</h1>
+    <script>
+        let operacion = "{{operacion}}"
+        if(operacion == "adicion"){
+            document.getElementById("adicion").cheked = true;
+        } else if (operacion == "resta"){
+            document.getElementById("sustraccion").cheked = true;
+        } else if (operacion == "multiplicacion"){
+            document.getElementById("multiplicacion").cheked = true;
+        } else if (operacion == "division"){
+            document.getElementById("division").cheked = true;
+        }
+    </script>
+</body>
+</html>

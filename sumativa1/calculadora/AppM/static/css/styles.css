@@ -1,0 +1,15 @@
+*{
+    background-color: #3aa824;
+    text-align: center;
+    margin: 5px;
+}
+h1{
+    color: #ffffff;
+}
+input{
+    background-color: white;
+}
+label{
+    color: #ffffff;
+    margin-block-start: 10px;
+}
